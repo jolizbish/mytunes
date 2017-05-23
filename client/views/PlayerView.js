@@ -11,9 +11,9 @@ var PlayerView = Backbone.View.extend({
     //   this.playFirst();
     // });
     // this.model.dequeue();
-    $('audio').on('ended', function() {
-      $el.dequeue();
-    });
+    this.$el.on('ended', function() {
+      this.model.ended();
+    }.bind(this));
   },
 
   setSong: function(song) {
